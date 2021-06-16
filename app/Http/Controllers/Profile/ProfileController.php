@@ -82,7 +82,7 @@ class ProfileController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|string|unique:users',
+            'email' => 'required|string|max:255',
             'nik' => 'required|max:16|unique:users,nik',
             'telp' => 'required|max:13',
         ]);

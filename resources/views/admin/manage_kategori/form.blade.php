@@ -6,7 +6,11 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"></div>
+                            @if (!empty ($kategoriLaporan))
+                            Edit Kategori Laporan
+                            @else
                             Tambah Kategori Laporan
+                            @endif
                         </h1>
                     </div>
                 </div>

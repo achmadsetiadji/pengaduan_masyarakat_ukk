@@ -19,6 +19,7 @@ class CreateTanggapansTable extends Migration
             $table->integer('user_id');
             $table->date('tanggal_tanggapan');
             $table->text('tanggapan');
+            $table->enum('status_tanggapan', ['Selesai', 'Ditolak']);
             $table->timestamps();
         });
     }

@@ -56,10 +56,10 @@
                     Data Kategori Laporan
                 </a>
                 <!-- Sidenav Accordion (Dashboard)-->
-                <a class="nav-link collapsed {{ (request()->is('manage_lokasi*')) ? 'active' : '' }}" href="/admin/manage_lokasi">
+                {{-- <a class="nav-link collapsed {{ (request()->is('manage_lokasi*')) ? 'active' : '' }}" href="/admin/manage_lokasi">
                     <div class="nav-link-icon"><i class="fas fa-map-marked-alt"></i></div>
                     Data Lokasi
-                </a>
+                </a> --}}
 
                 <!-- Sidenav Accordion (Dashboard)-->
                 {{-- <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse"

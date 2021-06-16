@@ -22,19 +22,19 @@
                     <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Nama User</th>
-                                <th>Email</th>
-                                <th>NIK</th>
-                                <th>Nomor Telepon</th>
+                                <th class="text-center">Nama User</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">NIK</th>
+                                <th class="text-center">Nomor Telepon</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($pengguna as $item)
                                 <tr>
-                                    <td>{{$item->name}}</td>
-                                    <td>{{$item->email}}</td>
-                                    <td>{{$item->nik}}</td>
-                                    <td>{{$item->telp}}</td>
+                                    <td class="text-center">{{$item->name}}</td>
+                                    <td class="text-center">{{$item->email}}</td>
+                                    <td class="text-center">{{$item->nik}}</td>
+                                    <td class="text-center">{{$item->telp}}</td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -4,29 +4,32 @@
     <!-- * * Tip * * You can use text or an image for your navbar brand.-->
     <!-- * * * * * * When using an image, we recommend the SVG format.-->
     <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-    <img class="dropdown-user-img ml-4" src="{{asset('backend/assets/img/logo.svg')}}" />
-    <a class="navbar-brand" href="/home">LAPEMAS</a>
+    <a href='/{{Auth::user()->role}}'>
+        <img class="dropdown-user-img ml-4" src="{{asset('backend/assets/img/logo.png')}}" />
+    </a>
+    <a class="navbar-brand" href='/{{Auth::user()->role}}'></a>
     <!-- Sidenav Toggle Button-->
     <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 mr-lg-2" id="sidebarToggle">
         <i class="fas fa-bars"></i>
     </button>
     <!-- Navbar Search Input-->
     <!-- * * Note: * * Visible only on and above the md breakpoint-->
-    <form class="form-inline mr-auto d-none d-md-block mr-3">
+    {{-- <form class="form-inline mr-auto d-none d-md-block mr-3">
         <div class="input-group input-group-joined input-group-solid">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
             <div class="input-group-append">
                 <div class="input-group-text"><i class="fas fa-search"></i></div>
             </div>
         </div>
-    </form>
+    </form> --}}
     <!-- Navbar Items-->
     <ul class="navbar-nav align-items-center ml-auto">
         <!-- Navbar Search Dropdown-->
         <!-- * * Note: * * Visible only below the md breakpoint-->
-        <li class="nav-item dropdown no-caret mr-3 d-md-none">
+        {{-- <li class="nav-item dropdown no-caret mr-3 d-md-none">
             <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="searchDropdown" href="#" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search"></i></a>
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search"></i>
+            </a>
             <!-- Dropdown - Search-->
             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--fade-in-up"
                 aria-labelledby="searchDropdown">
@@ -40,7 +43,7 @@
                     </div>
                 </form>
             </div>
-        </li>
+        </li> --}}
         <!-- Alerts Dropdown-->
         <li class="nav-item dropdown no-caret d-none d-sm-block mr-3 dropdown-notifications">
             <a class="btn btn-primary dropdown-toggle" id="navbarDropdownAlerts"
@@ -50,7 +53,7 @@
             </a>
         </li>
         <!-- Alerts Dropdown-->
-        <li class="nav-item dropdown no-caret d-none d-sm-block mr-3 dropdown-notifications">
+        {{-- <li class="nav-item dropdown no-caret d-none d-sm-block mr-3 dropdown-notifications">
             <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownAlerts"
                 href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false"><i class="fas fa-bell"></i></a>
@@ -99,9 +102,9 @@
                 </a>
                 <a class="dropdown-item dropdown-notifications-footer" href="#!">View All Alerts</a>
             </div>
-        </li>
+        </li> --}}
         <!-- Messages Dropdown-->
-        <li class="nav-item dropdown no-caret d-none d-sm-block mr-3 dropdown-notifications">
+        {{-- <li class="nav-item dropdown no-caret d-none d-sm-block mr-3 dropdown-notifications">
             <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownMessages"
                 href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false"><i class="fas fa-envelope"></i></a>
@@ -170,7 +173,7 @@
                 <!-- Footer Link-->
                 <a class="dropdown-item dropdown-notifications-footer" href="#!">Read All Messages</a>
             </div>
-        </li>
+        </li> --}}
         <!-- User Dropdown-->
         <li class="nav-item dropdown no-caret mr-3 mr-lg-0 dropdown-user">
             <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage"

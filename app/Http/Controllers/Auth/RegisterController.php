@@ -55,6 +55,18 @@ class RegisterController extends Controller
             'nik' => ['required', 'max:16', 'unique:users'],
             'telp' => ['required', 'max:13'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ],
+        [
+            'name.required' => 'Nama Harus Di Isi',
+            'email.required'=> 'Alamat Email Harus Di Isi',
+            'email.email'=> 'Alamat Email Tidak Valid',
+            'email.unique' => 'Alamat Email Sudah Terdaftar',
+            'nik.required' => 'NIK Harus Di Isi',
+            'nik.max' => 'NIK Maksimal 16 Karakter',
+            'nik.unique' => 'NIK Sudah Terdaftar',
+            'telp.required'=> 'Nomor Telepon Harus Di Isi',
+            'telp.max'=> 'Nomor Telepon Maksimal 13 karakter',
+            'password.required' => 'Password Harus Di Isi',
         ]);
     }
 

@@ -15,16 +15,16 @@ class CreateLaporansTable extends Migration
     {
         Schema::create('laporans', function (Blueprint $table) {
             $table->id();
+            $table->string('kode');
             $table->integer('kategori_id');
             $table->bigInteger('user_id');
             $table->string('judul_laporan');
             $table->text('isi_laporan');
             $table->date('tanggal_kejadian');
             $table->bigInteger('lokasi_id');
-            $table->bigInteger('instansi_id');
+            // $table->bigInteger('instansi_id');
             $table->date('tanggal_laporan');
             $table->text('lampiran');
-            // $table->enum('type', ['Pengaduan', 'Aspirasi', 'Permintaan Informasi']);
             $table->enum('status_laporan', ['Menunggu', 'Selesai', 'Ditolak']);
             $table->timestamps();
         });

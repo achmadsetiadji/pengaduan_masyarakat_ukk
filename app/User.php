@@ -18,9 +18,9 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
         'nik',
         'telp',
+        'password',
         'role',
         'image',
     ];
@@ -46,5 +46,10 @@ class User extends Authenticatable
     public function laporan()
     {
         return $this->belongsTo('App\Laporan');
+    }
+
+    public function tanggapan()
+    {
+        return $this->belongsTo('App\Tanggapan');
     }
 }

@@ -20,7 +20,7 @@ class AdminController extends Controller
         $data['layout'] = "admin.index";
         $data['adminCount'] = User::where('role','admin')->count();
         $data['petugasCount'] = User::where('role','petugas')->count();
-        $data['userCount'] = User::where('role','user')->count();
+        $data['userCount'] = User::where('role','pengguna')->count();
         $data['laporanMenungguCount'] = Laporan::where('status_laporan', 'Menunggu')->count();
         $data['laporanSelesaiCount'] = Laporan::where('status_laporan', 'Selesai')->count();
         $data['laporanDitolakCount'] = Laporan::where('status_laporan', 'Ditolak')->count();

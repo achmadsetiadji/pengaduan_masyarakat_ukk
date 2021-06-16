@@ -24,15 +24,15 @@
                     <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Nama Kategori Laporan</th>
-                                <th>Aksi</th>
+                                <th class="text-center">Nama Kategori Laporan</th>
+                                <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($kategoriLaporan as $item)
                                 <tr>
-                                    <td>{{$item->nama_kategori}}</td>
-                                    <td>
+                                    <td class="text-center">{{$item->nama_kategori}}</td>
+                                    <td class="text-center">
                                         <a class="btn btn-datatable btn-icon btn-transparent-dark mr-2" href="/admin/manage_kategori_laporan/{{$item->id}}/edit" role="button"><i class="fas fa-edit text-warning"></i></a>
                                         <form action="/admin/manage_kategori_laporan/delete/{{$item->id}}" method="POST" class="d-inline">
                                             @method('delete')

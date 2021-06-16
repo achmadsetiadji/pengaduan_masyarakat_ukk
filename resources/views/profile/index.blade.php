@@ -77,7 +77,7 @@
                                     <!-- Form Group (NIK)-->
                                     <div class="form-group col-md-6">
                                         <label class="small mb-1" for="nik">NIK</label>
-                                        <input class="form-control @error('nik') is-invalid @enderror" name="nik" id="nik" type="number"  placeholder="Masukan NIK Anda" value="{{Auth::user()->nik}}"/>
+                                        <input class="form-control @error('nik') is-invalid @enderror" name="nik" id="nik" type="text"  placeholder="Masukan NIK Anda" value="{{Auth::user()->nik}}"/>
                                         @error('nik')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -92,45 +92,45 @@
                                     </div>
                                 </div>
                                 <!-- Save changes button-->
-                                <button class="btn btn-primary" type="submit">Simpan Perubahan</button>
+                                <button class="btn btn-primary float-right" type="submit">Simpan Perubahan</button>
                             </form>
                         </div>
                     </div>
                 </div>
 
                 <div class="tab-pane fade" id="keamanan" role="tabpanel" aria-labelledby="keamanan-tab">
-                    <!-- Change password card-->
+                    <!-- Ubah Password card-->
                     <div class="card mb-4">
-                        <div class="card-header">Change Password</div>
+                        <div class="card-header">Ubah Password</div>
                         <div class="card-body">
                             <form action="{{route('profile.change_password')}}" method="POST">
                                 @method('put')
                                 @csrf
                                 <!-- Form Group (current password)-->
                                 <div class="form-group">
-                                    <label class="small mb-1" for="currentPassword">Current Password</label>
-                                    <input class="form-control @error('currentPassword') is-invalid @enderror" id="currentPassword" name="currentPassword" type="password" placeholder="Enter current password" />
+                                    <label class="small mb-1" for="currentPassword">Password Lama</label>
+                                    <input class="form-control @error('currentPassword') is-invalid @enderror" id="currentPassword" name="currentPassword" type="password" placeholder="Masukkan password lama" />
                                     @error('currentPassword')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <!-- Form Group (new password)-->
                                 <div class="form-group">
-                                    <label class="small mb-1" for="newPassword">New Password</label>
-                                    <input class="form-control @error('newPassword') is-invalid @enderror" id="newPassword" name="newPassword" type="password" placeholder="Enter new password" />
+                                    <label class="small mb-1" for="newPassword">Password Baru</label>
+                                    <input class="form-control @error('newPassword') is-invalid @enderror" id="newPassword" name="newPassword" type="password" placeholder="Masukkan password baru" />
                                     @error('newPassword')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <!-- Form Group (confirm password)-->
                                 <div class="form-group">
-                                    <label class="small mb-1" for="confirmPassword">Confirm Password</label>
-                                    <input class="form-control @error('confirmPassword') is-invalid @enderror" id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm new password" />
+                                    <label class="small mb-1" for="confirmPassword">Konfirmasi Password</label>
+                                    <input class="form-control @error('confirmPassword') is-invalid @enderror" id="confirmPassword" name="confirmPassword" type="password" placeholder="Konfirmasi password baru" />
                                     @error('confirmPassword')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <button class="btn btn-primary" type="submit">Simpan</button>
+                                <button class="btn btn-primary float-right" type="submit">Simpan Password</button>
                             </form>
                         </div>
                     </div>

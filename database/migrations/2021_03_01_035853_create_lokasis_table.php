@@ -18,8 +18,6 @@ class CreateLokasisTable extends Migration
             $table->string('nama_lokasi');
             $table->string('lat');
             $table->string('long');
-            $table->string('negara');
-            $table->string('provinsi');
             $table->timestamps();
         });
     }

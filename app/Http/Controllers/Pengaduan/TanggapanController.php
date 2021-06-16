@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Pengaduan;
 
 use App\Http\Controllers\Controller;
+use App\Laporan;
+use App\Tanggapan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Date;
 
 class TanggapanController extends Controller
 {
@@ -41,7 +45,22 @@ class TanggapanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'tanggapan' => 'required',
+        ]);
+
+        $tanggapan = new Tanggapan;
+        $tanggapan->laporan_id = $request->laporan_id;
+        $tanggapan->user_id = Auth::user()->id;
+        $tanggapan->tanggal_tanggapan = Date(now());
+        $tanggapan->tanggapan = $request->tanggapan;
+        $tanggapan->status_tanggapan = 'Selesai';
+        $tanggapan->save();
+
+        $laporan = Laporan::find($request->laporan_id);
+        $laporan->status_laporan = 'Selesai';
+        $laporan->save();
+        return redirect('/'.Auth::user()->role.'/laporan')->with('status', 'Data Laporan Berhasil Ditanggapi!');
     }
 
     /**
@@ -87,5 +106,21 @@ class TanggapanController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function tolak(Request $request)
+    {
+        $tanggapan = new Tanggapan;
+        $tanggapan->laporan_id = $request->laporan_id;
+        $tanggapan->user_id = Auth::user()->id;
+        $tanggapan->tanggal_tanggapan = Date(now());
+        $tanggapan->tanggapan = $request->tanggapan;
+        $tanggapan->status_tanggapan = 'Ditolak';
+        $tanggapan->save();
+
+        $laporan = Laporan::find($request->laporan_id);
+        $laporan->status_laporan = 'Ditolak';
+        $laporan->save();
+        return redirect('/' . Auth::user()->role . '/laporan')->with('status', 'Data Laporan Berhasil Ditanggapi!');
     }
 }

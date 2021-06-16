@@ -12,9 +12,8 @@ class LokasiTableSeeder extends Seeder
      */
     public function run()
     {
-
-        $path = 'database/seeds/assets/lokasi.sql';
-        $sql = file_get_contents($path);
-        DB::unprepared($sql);
+        Eloquent::unguard();
+        $lokasi = 'database/seeds/assets/lokasis.sql';
+        DB::unprepared(file_get_contents($lokasi));
     }
 }

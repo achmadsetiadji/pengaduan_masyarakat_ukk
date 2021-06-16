@@ -24,21 +24,21 @@
                     <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Nama Petugas</th>
-                                <th>Email</th>
-                                <th>NIK</th>
-                                <th>Nomor Telepon</th>
-                                <th>Aksi</th>
+                                <th class="text-center">Nama Petugas</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">NIK</th>
+                                <th class="text-center">Nomor Telepon</th>
+                                <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($petugas as $item)
                                 <tr>
-                                    <td>{{$item->name}}</td>
-                                    <td>{{$item->email}}</td>
-                                    <td>{{$item->nik}}</td>
-                                    <td>{{$item->telp}}</td>
-                                    <td>
+                                    <td class="text-center">{{$item->name}}</td>
+                                    <td class="text-center">{{$item->email}}</td>
+                                    <td class="text-center">{{$item->nik}}</td>
+                                    <td class="text-center">{{$item->telp}}</td>
+                                    <td class="text-center">
                                         <a class="btn btn-datatable btn-icon btn-transparent-dark mr-2" href="/admin/manage_petugas/{{$item->id}}/edit" role="button"><i class="fas fa-edit text-warning"></i></a>
                                         <form action="/admin/manage_petugas/delete/{{$item->id}}" method="POST" class="d-inline">
                                             @method('delete')

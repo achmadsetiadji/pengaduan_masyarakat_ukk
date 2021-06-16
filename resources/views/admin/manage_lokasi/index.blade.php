@@ -24,19 +24,19 @@
                     <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Lokasi</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
-                                <th>Aksi</th>
+                                <th class="text-center">Lokasi</th>
+                                <th class="text-center">Latitude</th>
+                                <th class="text-center">Longitude</th>
+                                <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($lokasi as $item)
                                 <tr>
-                                    <td>{{$item->nama_lokasi}}</td>
-                                    <td>{{$item->latitude}}</td>
-                                    <td>{{$item->longitude}}</td>
-                                    <td>
+                                    <td class="text-center">{{$item->nama_lokasi}}</td>
+                                    <td class="text-center">{{$item->lat}}</td>
+                                    <td class="text-center">{{$item->long}}</td>
+                                    <td class="text-center">
                                         <a class="btn btn-datatable btn-icon btn-transparent-dark mr-2" href="/admin/manage_lokasi/{{$item->id}}/edit" role="button"><i class="fas fa-edit text-warning"></i></a>
                                         <form action="/admin/manage_lokasi/delete/{{$item->id}}" method="POST" class="d-inline">
                                             @method('delete')

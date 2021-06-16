@@ -20,7 +20,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+//API
+Route::post('api/login', 'Api/AuthController@login');
+Route::get('api/logout', 'Api/AuthController@logout');
+Route::post('api/register', 'Api/AuthController@register');
+
+Route::post('api/laporan/create', 'Api/LaporanController@store');
+Route::post('api/laporan/{id}/show', 'Api/LaporanController@show');
 
 //Profile Setting
 Route::resource('profile', 'Profile\ProfileController');
@@ -91,6 +97,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/tanggapan/{id}/edit', 'Pengaduan\TanggapanController@edit');
     Route::put('/tanggapan/edit/{id}', 'Pengaduan\TanggapanController@update');
     Route::delete('/tanggapan/delete/{id}', 'Pengaduan\TanggapanController@destroy');
+
+    //tolak
+    Route::post('/tanggapan/tolak', 'Pengaduan\TanggapanController@tolak');
+
+    Route::get('/exportPDF', 'Pengaduan\LaporanController@exportPDF')->name('exportPDF');
+    Route::get('/gmaps', 'Pengaduan\LaporanController@gmaps')->name('gmaps');
 });
 
 //petugas
@@ -117,6 +129,9 @@ Route::group(['prefix' => 'petugas', 'middleware' => 'petugas'], function () {
     Route::get('/tanggapan/{id}/edit', 'Pengaduan\TanggapanController@edit');
     Route::put('/tanggapan/edit/{id}', 'Pengaduan\TanggapanController@update');
     Route::delete('/tanggapan/delete/{id}', 'Pengaduan\TanggapanController@destroy');
+
+    //tolak
+    Route::post('/tanggapan/tolak', 'Pengaduan\TanggapanController@tolak');
 });
 
 //pengguna
